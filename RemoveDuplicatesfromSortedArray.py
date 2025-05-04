@@ -1,14 +1,9 @@
-def removeDuplicates(nums) -> int:
-    seen = set()
-    duplicates = 0
+def removeDuplicates(self, nums: List[int]) -> int:
+    l = 1
 
-    for num in nums:
-        if num in seen:
-            duplicates += 1
-        else:
-            seen.add(num)
+    for r in range(1, len(nums)):
+        if nums[r] != nums[r-1]:
+            nums[l] = nums[r]
+            l += 1
 
-    return duplicates
-
-print(removeDuplicates([1, 1, 2])) # Output: 1
-        
+    return l
