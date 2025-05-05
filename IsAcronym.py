@@ -9,4 +9,4 @@ def isAcronym(words: list[str], s: str) -> bool:
 
     return True
 
-print(isAcronym(["afqcpzsx","icenu"], "ai"))
+print(isAcronym(["dvn","acafe"], "dp"))
