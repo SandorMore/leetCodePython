@@ -1,9 +1,5 @@
 def lengthofLastWord(s : str) -> str:
-    li = []
-    s = s.strip()
-
-    li.append(s.split(" "))
-    return len(li[0][-1])
+    return len(s.strip().split(" ")[-1])
 
 
 print(lengthofLastWord("Hello World nigga fsaz   ")) 
