@@ -7,8 +7,6 @@ def PlusOne(digits : list[int]) -> list[int]:
     for i in num:
         res.append(int(i))
         
-
     return res
-
 
 print(PlusOne([9]))
