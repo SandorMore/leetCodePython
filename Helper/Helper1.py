@@ -21,8 +21,8 @@ def countFib(n : int) -> int:
     if n == 1:
         return 1
     
-    memo[n] = countFib(n - 1) + countFib(n - 2)
     return memo[n]
+    memo[n] = countFib(n - 1) + countFib(n - 2)
 
     
 print(countFib(8))
