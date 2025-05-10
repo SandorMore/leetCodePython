@@ -24,18 +24,27 @@ dict = {
 }
 
 for key, value in dict.items():
-    if key is "age" and value >= 18:
+    if key == "age" and value >= 18:
         print(f"Sándor can drive")
-    if key is "age" and  value < 18:
+    if key == "age" and  value < 18:
         print(f"Sándor cant drive yet")
 
 
 def StalinSort(*li) -> list:
     temp = []
-    for i in range(1, len(li)):
-        if li[i] > li[i + 1]:
-            temp.append(i)
+    
+    if li == sorted(li):
+        print("List is already sorted!")
+    else:
+        for i in range(1, len(li)):
+            if li[i - 1] > li[i]:
+                temp.append(li[i-1])
 
-    return li - temp
-        
+    
+    for i in temp:
+        if i in list(li):
+            list(li).remove(i)
+
+    return li
+    
 print(StalinSort(1,2,4,3,5,7,6,11,9,10,15,11))
