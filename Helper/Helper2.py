@@ -28,3 +28,14 @@ for key, value in dict.items():
         print(f"Sándor can drive")
     if key is "age" and  value < 18:
         print(f"Sándor cant drive yet")
+
+
+def StalinSort(*li) -> list:
+    temp = []
+    for i in range(1, len(li)):
+        if li[i] > li[i + 1]:
+            temp.append(i)
+
+    return li - temp
+        
+print(StalinSort(1,2,4,3,5,7,6,11,9,10,15,11))
