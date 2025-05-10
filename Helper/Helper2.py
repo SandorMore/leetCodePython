@@ -16,3 +16,15 @@ def findInfo(**kwargs):
         print(f"{key}: {value}")
 
 print(findInfo(name="Sándor", age="30", city="Debrecen"))
+
+dict = {
+    "name": str("Sándor"),
+    "age": int(17),
+    "occupation": bool(False),
+}
+
+for key, value in dict.items():
+    if key is "age" and value >= 18:
+        print(f"Sándor can drive")
+    if key is "age" and  value < 18:
+        print(f"Sándor cant drive yet")
