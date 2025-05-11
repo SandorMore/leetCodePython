@@ -12,22 +12,21 @@ def LongestSubstring(s : str) -> int:
     
     return max(counts)
     
-print(LongestSubstring("pwwkew"))
+# print(LongestSubstring("pwwkew"))
 
 
-def LongestSubS(s: str) -> list:
-    substrings = []
+def LongestSubS(s: str) -> int:
     counts = []
     for i in range(len(s)):
-        for j in range(i + 1, len(s) + 1):
-            substrings.append(s[i:j])
-        
-    for i in substrings:
-        print(i)
-        for j in range(len(i)):
-            if (i.count(i[j]) <= 1):
-                counts.append(len(i))
+        unique_chars = set()
+        count = 0
+        for j in range(i, len(s)):
+            if s[j] in unique_chars:
+                break
+            unique_chars.add(s[j])
+            count += 1
+        counts.append(count)
 
-    return max(counts)
+    return max(counts) if counts else 0
     
-print(LongestSubS("abcdag"))
+print(LongestSubS("abcdaga"))
