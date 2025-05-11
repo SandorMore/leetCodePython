@@ -8,4 +8,4 @@ def _3ConsecutiveOdds(arr: list) -> bool:
             
     return False
 
-print(_3ConsecutiveOdds([1,3,4,5,7]))
+print(_3ConsecutiveOdds([1,2,1,1]))
