@@ -1,24 +1,26 @@
-n = int(input())
+# Read the number of elements in set A
+n = int(input().strip())
+A = set(map(int, input().strip().split()))
 
-s = set(map(int, input().split()))
+# Read the number of other sets
+N = int(input().strip())
 
-num_commands = int(input())
-
-for _ in range(num_commands):
-    command = input().split()
-    operation = command[0]
+# Perform operations on set A
+for _ in range(N):
+    # Read the operation name and the length of the other set
+    command = input().strip().split()[0]
+    # Read the elements of the other set
+    s = set(map(int, input().strip().split()))
     
-    if operation == "pop":
-        if s:  
-            s.pop()
-    elif operation == "remove":
+    # Perform the specified operation
+    if command == "intersection_update":
+        A.intersection_update(s)
+    elif command == "update":
+        A.update(s)
+    elif command == "symmetric_difference_update":
+        A.symmetric_difference_update(s)
+    elif command == "difference_update":
+        A.difference_update(s)
 
-        value = int(command[1])
-        if value in s:
-            s.remove(value)
-    elif operation == "discard":
-
-        value = int(command[1])
-        s.discard(value)
-
-print(sum(s))
+# Print the sum of elements in set A
+print(sum(A))
