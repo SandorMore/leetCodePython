@@ -1,20 +1,16 @@
-def lengthOfStuff(s: str, t: int) -> int:
+def transformed_string_length(s: str, t: int) -> int:
     MOD = 10**9 + 7
 
-    def compute_contribution(char: str, t: int) -> int:
-        position = ord('z') - ord(char)
+    z_count = s.count('z')
+    non_z_count = len(s) - z_count
 
-        if t <= position:
-            return 1
+    for _ in range(t):
 
-        return pow(2, t - position, MOD)
+        new_z_count = non_z_count
+        non_z_count = (non_z_count + 2 * z_count) % MOD
+        z_count = new_z_count
+
+    return (non_z_count + z_count) % MOD
 
 
-    total_length = 0
-    for char in s:
-        total_length += compute_contribution(char, t)
-        total_length %= MOD
-
-    return total_length
-
-print(lengthOfStuff("azbk", 7517))
+print(transformed_string_length("jqktcurgdvlibczdsvnsg", 7517))
