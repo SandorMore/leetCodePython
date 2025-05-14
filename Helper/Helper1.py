@@ -26,3 +26,6 @@ def countFib(n : int) -> int:
 
     
 print(countFib(8))
+
+nums = [1,2,3,4]
+
