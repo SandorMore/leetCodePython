@@ -28,3 +28,4 @@ def binary_search(nums: list[int], target: int) -> int:
             R = mid - 1
 
     return -1  # Target not found
+
