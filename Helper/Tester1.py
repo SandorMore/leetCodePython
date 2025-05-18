@@ -1,4 +1,4 @@
 n = int(input())
-print(*range(1, n + 1), sep="")
+print(*range(3) *range(0,3,1) *range(10, 7 - 1, -1), sep="")
 
-print(*range(1,30), sep=";", end="\n")
+print(*[i for pair in zip(range(1, 4), range(9, 6, -1)) for i in pair])
