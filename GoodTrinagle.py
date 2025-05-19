@@ -9,7 +9,7 @@ def tri(nums):
         elif nums.count(nums[i]) == 2:
             return "isosceles"
 
-        elif nums.count(nums[i]) == 1 and nums.count(nums[i-1]) == 1:
+        elif nums.count(nums[i]) == 1 and nums.count(nums[i-1]) == 1:   
             return "scalene"
 
 
