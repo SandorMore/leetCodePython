@@ -25,4 +25,13 @@ def niga(dividend, divisor):
             quotient += 1 << i
     
     # Apply sign to the result
-    return -quotient if negative else quotient
+    result = -quotient if negative else quotient
+
+    # Clamp to 32-bit signed integer range
+    INT_MAX = 2**31 - 1
+    INT_MIN = -2**31
+    if result < INT_MIN:
+        return INT_MIN
+    if result > INT_MAX:
+        return INT_MAX
+    return result
