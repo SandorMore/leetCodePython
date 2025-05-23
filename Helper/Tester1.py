@@ -8,3 +8,9 @@ try:
 	print(int(a))
 except Exception as e:
 	print(f"Error: {e}")
+
+
+try:
+	print(bin(64))
+except Exception as es:
+	print(f"Error as: ")
