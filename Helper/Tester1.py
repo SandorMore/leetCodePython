@@ -19,4 +19,4 @@ except Exception as es:
 
 print()
 
-print("Learning vim notation in vsc")
+print("Learning vim notation in ")
